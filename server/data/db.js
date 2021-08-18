@@ -14,13 +14,13 @@ const mongoDataMethods = {
         const newBook = new Book(args)
         return await newBook.save()
     },
-    updateBook: async id => {
-        const updatedBook = Book(id)
-        return await updatedBook.save()
+    updateBook: async args => {
+        const updatedBook = Book
+        return await updatedBook.findByIdAndUpdate(args.id, args)
     },
-    deleteBook: async id => {
-        const deletedBook = Book(id)
-        return await deletedBook.remove({ where: { id: id } })
+    deleteBook: async args => {
+        const deletedBook = Book
+        return await deletedBook.findByIdAndDelete(args.id, args)
     }
 
 }

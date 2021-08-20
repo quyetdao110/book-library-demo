@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-const getBooks = gql `
+const getBooks = gql`
     query getAllBooks{
         books{
             name
@@ -9,7 +9,7 @@ const getBooks = gql `
     }
 `;
 
-const getOneBook = gql `
+const getOneBook = gql`
     query getOneBook($id: ID!){
         book(id: $id){
             id
@@ -17,7 +17,7 @@ const getOneBook = gql `
             type
             author{
                 id
-                name
+                nameAuthor
                 age
                 books{
                     id
@@ -28,11 +28,11 @@ const getOneBook = gql `
     }
 `;
 
-const getAuthors = gql `
+const getAuthors = gql`
     query getAllAuthors{
         authors{
             id
-            name
+            nameAuthor
         }
     }
 `;
